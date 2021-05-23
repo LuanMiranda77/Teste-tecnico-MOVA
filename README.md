@@ -6,3 +6,6 @@ Sobre a prova:
 - O "Upload do resultado com os percentuais em cada característica" é referente ao teste de personalidade;
 - O teste de lógica deve ser finalizado em 20 minutos após ter aberto o mesmo;
 - Siga para o teste da vaga escolhida, podendo se candidatar para mais de uma vaga, desde que faça as provas;
+
+-resultado
+https://uploaddeimagens.com.br/imagens/e_hpT3M
