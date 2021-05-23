@@ -1,0 +1,46 @@
+<div class="card">
+  <p-dataView #dv [value]="bands" [paginator]="true" [rows]="12" filterBy="name"  layout="list">
+
+    <ng-template pTemplate="header">
+      <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
+
+        <p-dropdown #option [options]="sortOptions" placeholder="Escolha o tipo de filtro"
+          (onChange)="filterBay($event.value)" styleClass="p-mb-2 p-mb-md-0"></p-dropdown>
+
+          <p-dropdown [options]="filterSelect"  placeholder="filtro escolhido"
+          (onChange)="filterTypes($event.value)" optionLabel="{{typeFilter}}" styleClass="p-mb-2 p-mb-md-0"></p-dropdown>
+
+        <span class="p-input-icon-left p-mb-2 p-mb-md-0">
+          <input #nameInput type="text" pInputText placeholder="Pesquise..." >
+          <p-button icon="pi pi-search"  (onClick)="pesquisaByName(nameInput.value )"></p-button>
+        </span>
+
+
+      </div>
+      <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+    </ng-template>
+
+    <ng-template let-band pTemplate="listItem">
+      <div class="p-col-12">
+        <div class="product-list-item">
+          <a href="details/{{band.name}}"><img [src]="band.flag" [alt]="band.name" /></a>
+          <a href=""></a>
+          <div class="product-list-detail">
+            <div class="product-name">{{band.name}}</div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template let-band pTemplate="gridItem">
+      <div class="p-col-12 p-md-4">
+        <div class="band-grid-item card">
+          <div class="band-grid-item-content">
+            <a href=""><img [src]="band.flag" [alt]="band.name" /></a>
+            <div class="product-name">{{band.name}}</div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-dataView>
+</div>

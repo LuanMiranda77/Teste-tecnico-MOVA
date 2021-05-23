@@ -1,0 +1,72 @@
+<div class="card-image ui-g" style="margin-top:5%">
+
+  <div class="p-col-12 p-md-6 p-lg-3 capa-detalhe">
+
+    <img class="img" [src]="band.flag" [alt]="band.name" />
+
+  <div class="p-col-12 p-md-6 p-lg-3 detalhe">
+    <p-toolbar >
+      <div style="display: inline-block;">
+        <h2>{{band.name}}</h2>
+
+
+        <div>
+          <h5>Capital: {{band.capital}}</h5>
+        </div>
+
+        <div>
+          <h5>Região: <a href="/menu/2">{{band.region}}</a></h5>
+        </div>
+
+        <div>
+          <h5>Sub. Região: {{band.subregion}}</h5>
+        </div>
+
+        <div>
+          <h5>População: {{band.population}}</h5>
+        </div>
+
+        <div>
+          <h5>Línguas nativa: {{linguas}}</h5>
+        </div>
+
+
+      </div>
+
+    </p-toolbar>
+  </div>
+</div>
+</div>
+<!-- ================================================== -->
+<div class="card">
+<p-dataView #dv [value]="vizinhos" [paginator]="true" [rows]="3" filterBy="name">
+
+  <ng-template pTemplate="header">
+    <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between" >
+        <h2>Paises vizinhos</h2>
+    </div>
+    <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+  </ng-template>
+
+  <ng-template let-band pTemplate="listItem">
+    <div class="p-col-12">
+      <div class="product-list-item">
+        <a href="details/{{band.name}}"><img [src]="band.flag" [alt]="band.name" /></a>
+        <div class="product-list-detail">
+          <div class="product-name">{{band.name}}</div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template let-band pTemplate="gridItem">
+    <div class="p-col-12 p-md-4">
+      <div class="band-grid-item card">
+        <div class="band-grid-item-content">
+          <a href="details/{{band.name}}"><img [src]="band.flag" [alt]="band.name" /></a>
+          <div class="product-name">{{band.name}}</div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-dataView>
+</div>
